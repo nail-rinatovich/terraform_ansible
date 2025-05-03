@@ -1,0 +1,25 @@
+---
+all:
+  children:
+    frontend:
+      hosts:
+        frontend1:
+          ansible_host: 51.250.15.205
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: ~/.ssh/id_rsa
+        frontend2:
+          ansible_host: 89.169.141.43
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: ~/.ssh/id_rsa
+    database:
+      hosts:
+        db_master:
+          ansible_host: 84.201.135.33
+        db_replica:
+          ansible_host: 51.250.81.179
+    monitoring:
+      hosts:
+        zabbix:
+          ansible_host: 158.160.55.200
+        grafana:
+          ansible_host: 89.169.135.163 

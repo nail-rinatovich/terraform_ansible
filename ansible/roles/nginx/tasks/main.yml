@@ -1,0 +1,29 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Create nginx configuration for MediaWiki
+  template:
+    src: mediawiki.conf.j2
+    dest: /etc/nginx/sites-available/mediawiki.conf
+    mode: '0644'
+
+- name: Enable MediaWiki site
+  file:
+    src: /etc/nginx/sites-available/mediawiki.conf
+    dest: /etc/nginx/sites-enabled/mediawiki.conf
+    state: link
+
+- name: Remove default nginx site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes 

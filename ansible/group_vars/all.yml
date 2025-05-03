@@ -1,0 +1,31 @@
+---
+# MediaWiki Configuration
+mediawiki_version: "1.39"
+mediawiki_db_name: mediawiki
+mediawiki_db_user: mediawiki
+mediawiki_db_password: "MediaWikiSecurePass2024!"
+mediawiki_admin_user: admin
+mediawiki_admin_password: "AdminSecurePass2024!"
+mediawiki_site_name: "MediaWiki YC"
+mediawiki_site_lang: "ru"
+
+# PHP Configuration
+php_version: "8.1"
+php_memory_limit: "256M"
+php_max_execution_time: "300"
+
+# PostgreSQL Configuration
+postgresql_version: "12"
+postgresql_data_dir: "/var/lib/postgresql/12/main"
+postgresql_max_connections: 100
+postgresql_shared_buffers: "1GB"
+
+# Nginx Configuration
+nginx_worker_processes: "auto"
+nginx_worker_connections: 1024
+nginx_client_max_body_size: "100M"
+
+# Monitoring Configuration
+zabbix_server_version: "6.0"
+grafana_version: "9.5.2"
+prometheus_version: "2.45.0" 

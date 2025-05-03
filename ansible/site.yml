@@ -1,0 +1,23 @@
+---
+- name: Configure frontend servers
+  hosts: frontend
+  become: yes
+  roles:
+    - common
+    - nginx
+    - php
+    - mediawiki
+
+- name: Configure database servers
+  hosts: database
+  become: yes
+  roles:
+    - common
+    - postgresql
+
+- name: Configure monitoring servers
+  hosts: monitoring
+  become: yes
+  roles:
+    - common
+    - monitoring 
